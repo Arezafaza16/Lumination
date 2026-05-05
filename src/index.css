@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Serif:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ffffff;
+  --color-background: #0a0a0a;
+  --color-surface: #121212;
+  --color-on-background: #e2e2e2;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+
+  --spacing-section-gap: 180px;
+  --spacing-margin-edge: 8vw;
+  --spacing-container-max: 1600px;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-background antialiased selection:bg-white selection:text-black font-sans;
+  }
+}
+
+@layer utilities {
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: 8vw 1fr 1fr 8vw;
+  }
+
+  .editorial-border {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .img-reveal {
+    transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1), filter 2s ease;
+  }
+  
+  .group:hover .img-reveal {
+    transform: scale(1.05);
+    filter: brightness(1.1) contrast(1.1);
+  }
+
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  }
+  
+  .mix-blend-diff {
+    mix-blend-mode: difference;
+  }
+
+  .mix-blend-luminosity {
+    mix-blend-mode: luminosity;
+  }
+}
+
